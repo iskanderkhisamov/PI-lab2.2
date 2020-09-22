@@ -1,80 +1,82 @@
-/* Animations with keyframes */
-@-webkit-keyframes x_rot {
-    0%    { -webkit-transform: rotateX(-30deg); }
-    50%   { -webkit-transform: rotateX(30deg); }
-    100%  { -webkit-transform: rotateX(-30deg); }
+/* Создаем анимацию */
+@-webkit-keyframes x_rot {  /* Первая анимация */
+    0%    { -webkit-transform: rotateX(-30deg); } /* поворот по оси Х на -30 градусов в начале анимации */
+    50%   { -webkit-transform: rotateX(30deg); } /* поворот по оси Х на 30 градусов в середине анимации*/
+    100%  { -webkit-transform: rotateX(-30deg); } /* поворот по оси Х на -30 градусов в конце анимации */
 }
-@-webkit-keyframes y_rot {
-    0%    { -webkit-transform: rotateY(0deg); }
-    50%   { -webkit-transform: rotateY(180deg); }
-    100%  { -webkit-transform: rotateY(360deg); }
+@-webkit-keyframes y_rot { /* Вторая анимация */
+    0%    { -webkit-transform: rotateY(0deg); } /* поворот по оси Y на 0 градусов в начале анимации */
+    50%   { -webkit-transform: rotateY(180deg); } /* поворот по оси Y на 180 градусов в середине анимации*/
+    100%  { -webkit-transform: rotateY(360deg); } /* поворот по оси Y на 360 градусов в конце анимации */
 }
 
-/* main styles */
+/* Основные стили */
 .slider {
-    margin: 250px auto;
-
-    -webkit-perspective: 1000; /* setup perspective to parent */
+    margin: 250px auto; /* внешний оступ по вертикали 250px, по горизонтали браузер выбирает подходящее значение для использования */
+    -webkit-perspective: 1000px; /* perspective определяет расcтояние между плоскостью z = 0 и пользователем для того чтобы придать 3D-позиционируемому элементу эффект переспективы */
 }
 .x_rot {
-    -webkit-transform-style: preserve-3d;
-    -webkit-animation-name: x_rot; /* setup custom animations */
-    -webkit-animation-duration: 6s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease;
+    -webkit-transform-style: preserve-3d; /* показывает, что дочерний элемент должен быть спозиционирован в 3D-пространстве */
+    -webkit-animation-name: x_rot; /* установка анимации, которую сделали выше */
+    -webkit-animation-duration: 6s; /* Время анимации */
+    -webkit-animation-iteration-count: infinite; /* бесконечный повтор анимации */
+    -webkit-animation-timing-function: ease; /* анимация начинается медленно, затем ускоряется и к концу движения опять замедляется */
 }
 .y_rot {
-    -webkit-transform-style: preserve-3d;
-    -webkit-animation-name: y_rot; /* setup custom animations */
-    -webkit-animation-duration: 10s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+    -webkit-transform-style: preserve-3d; /* показывает, что дочерний элемент должен быть спозиционирован в 3D-пространстве */
+    -webkit-animation-name: y_rot; /* установка анимации, которую сделали выше */
+    -webkit-animation-duration: 10s; /* Время анимации */
+    -webkit-animation-iteration-count: infinite; /* бесконечный повтор анимации */
+    -webkit-animation-timing-function: linear; /* линейная анимация, то есть без прерываний и ускорений с замедлениями */
 }
+/* Стиль для div' */
 .y_rot div {
-    color: rgba(0,0,0,0.9);
-    height: 235px;
-    left: 300px;
-    opacity: 0.8;
-    position: absolute;
-    width: 235px;
+    color: rgba(0,0,0,0.9); /* делат текст div'а белым и непрозрачным на 90% */
+    height: 235px; /* высота div'а */
+    left: 300px; /* 300 пикселей направо */
+    opacity: 0.8; /* непрозрачность 80% */
+    position: absolute; /* абсолютная позиция в разметке */
+    width: 235px; /* ширина картинки */
 
-    -webkit-border-radius: 15px;
-    -webkit-transition: .3s;
+    -webkit-border-radius: 15px; /* Устанавливает радиус скругления уголков рамки */
+    -webkit-transition: .3s; /* Сколько должна длиться анимация перехода до её завершения */
 }
+/* Стили для каждого div'а */
 .y_rot div#i1 {
-    -webkit-transform: rotateY(0deg) translateZ(200px);
+    -webkit-transform: rotateY(0deg) translateZ(200px); /* поворот по оси Y на 0 градусов и перенос по оси z*/
 }
 .y_rot div#i2 {
-    -webkit-transform: rotateY(60deg) translateZ(200px);
+    -webkit-transform: rotateY(60deg) translateZ(200px); /* поворот по оси Y на 60 градусов и перенос по оси z*/
 }
 .y_rot div#i3 {
-    -webkit-transform: rotateY(120deg) translateZ(200px);
+    -webkit-transform: rotateY(120deg) translateZ(200px); /* поворот по оси Y на 120 градусов и перенос по оси z*/
 }
 .y_rot div#i4 {
-    -webkit-transform: rotateY(180deg) translateZ(200px);
+    -webkit-transform: rotateY(180deg) translateZ(200px); /* поворот по оси Y на 180 градусов и перенос по оси z*/
 }
 .y_rot div#i5 {
-    -webkit-transform: rotateY(240deg) translateZ(200px);
+    -webkit-transform: rotateY(240deg) translateZ(200px); /* поворот по оси Y на 240 градусов и перенос по оси z*/
 }
 .y_rot div#i6 {
-    -webkit-transform: rotateY(300deg) translateZ(200px);
+    -webkit-transform: rotateY(300deg) translateZ(200px); /* поворот по оси Y на 300 градусов и перенос по оси z*/
 }
+/* Стиль для картинок */
 .y_rot div img {
-    height:235px;
-    width:235px;
+    height:235px; /* высота картинки */
+    width:235px; /* ширина картинки */
 
-    -webkit-border-radius: 15px;
-    -webkit-transition: .3s;
+    -webkit-border-radius: 15px; /* Устанавливает радиус скругления уголков рамки */
+    -webkit-transition: .3s; /* Сколько должна длиться анимация перехода до её завершения */
 }
 
-/* onhover effect */
+/* Эффект при наведении мышкой */
 .y_rot div#i1:hover,
 .y_rot div#i2:hover,
 .y_rot div#i3:hover,
 .y_rot div#i4:hover,
 .y_rot div#i5:hover,
 .y_rot div#i6:hover {
-    opacity: 1;
+    opacity: 1; /* непрозрачность 100% */
 }
 .y_rot div#i1:hover img,
 .y_rot div#i2:hover img,
@@ -82,13 +84,13 @@
 .y_rot div#i4:hover img,
 .y_rot div#i5:hover img,
 .y_rot div#i6:hover  img{
-    height:335px;
-    width:335px;
-    margin-left:-50px;
-    margin-top:-50px;
+    height:335px; /* высота картинки */
+    width:335px; /* ширина картинки */
+    margin-left:-50px; /* внешний отступ слева картинки -50 пикселей, то есть картинка увеличивается */
+    margin-top:-50px; /* внешний отступ сверху картинки -50 пикселей, то есть картинка увеличивается */
 }
 
-/* pause main animation onhover */
+/* Остановка анимации при наведении мышкой */
 .x_rot:hover {
     -webkit-animation-play-state: paused;
 }
